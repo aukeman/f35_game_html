@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>single buffer</title>
+    <title>F-35 Lightning II</title>
     <style type="text/css">
 
 .buffer
@@ -22,14 +22,29 @@
 }
     </style>
   </head>
-  <body style="width:640px; height:480px; -moz-transform-origin:0px 0px; -moz-transform:scale(2)">
+  <body style="width:640px; height:480px">
     <div id="buffer" class="buffer" style="background-color:#00007F"></div>
   </body>
   <script type="text/javascript">
 
-// makes the game look pixelated for browsers other than firefox
-// for firefox, use the transform in the body's style attribute
-document.body.style.zoom=2.0;
+// from http://stackoverflow.com/a/11744120
+var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x = w.innerWidth || e.clientWidth || g.clientWidth,
+    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+// if the browser window is large enough, double the size of the game
+// area to give more of a pixel art feel
+if ( 640*2 <= x && 480 * 2 <= y )
+{
+  // for firefox; set the body's style
+  g.style="width:640px; height:480px; -moz-transform-origin:0px 0px; -moz-transform:scale(2)";
+
+  // for other browsers
+  document.body.style.zoom=2.0;
+}
 
 var I0="background-image:url('img/island.png');background-position:0px 0px";
 var I1="background-image:url('img/island.png');background-position:-64px 0px";
@@ -238,7 +253,7 @@ var launch_animation_sprites =
    "background-image:url('img/launch_animation.png');background-position:-32px 0px;background-repeat:no-repeat",
    "background-image:url('img/launch_animation.png');background-position:-64px 0px;background-repeat:no-repeat"];
 
-
+           
 function font( image, width, height, sprite_map )
 {
   this.image=image;
