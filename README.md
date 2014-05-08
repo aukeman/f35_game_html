@@ -3,6 +3,8 @@ f35_game_html
 
 Top-down "1942"-inspired shooter written in html/css/js.
 
+[Play Online](http://www.jacobaukeman.com/static/f35_game_html/f35.html)
+
 ![screenshot](https://raw.github.com/aukeman/f35_game_html/master/screenshots/screenshot_2.png)
 
 Written as kind of an April Fools Day gag for work when I was working on F-35 Pilot Training Devices at Lockheed.
